@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-xs-12">
+        <form [formGroup]="customerCommentsForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <h3>Add Customer Comments</h3>
+                        <hr>
+                        <label for="comments">Additional Comments</label>
+                        <textarea type="text" id="comments" formControlName="comments" class="form-control"
+                            rows="6"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <button type="button" class="btn" (click)="backToAddressDetails()">Back</button>
+                <button 
+                  type="submit" 
+                  class="btn btn-success"
+                  [disabled]="!customerCommentsForm.valid">Submit</button>
+              </div>
+            </div>
+        </form>
+    </div>
+</div>

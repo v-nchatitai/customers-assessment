@@ -1,0 +1,75 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form [formGroup]="addressDetailsForm">
+      <h3>Add Customer Addresses</h3>
+      <hr>
+      <label>Physical Address</label>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <input type="text" id="streetAddress01" formControlName="streetAddress01" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <input type="text" id="streetAddress02" formControlName="streetAddress02" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <input type="text" id="cityOrTown" formControlName="cityOrTown" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <input type="text" id="postalCode" formControlName="postalCode" class="form-control">
+          </div>
+        </div>
+      </div>
+      <hr>
+      <label>Postal Address</label>
+      <hr>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <input type="text" id="pAddress01" formControlName="pAddress01" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <input type="text" id="pAddress02" formControlName="pAddress02" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <input type="text" id="pCityOrTown" formControlName="pCityOrTown" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <input type="text" id="pPostalCode" formControlName="pPostalCode" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <button type="button" class="btn" (click)="backToCustomerDetails()">Back</button>
+          <button type="button" class="btn btn-success" [disabled]="!addressDetailsForm.valid"
+            (click)="proceedToAddressDetails()">Next</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

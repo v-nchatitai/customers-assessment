@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form [formGroup]="customerDetailsForm">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <h3>Add Customer Details</h3>
+            <hr>
+            <label for="firstName">First Name</label>
+            <input 
+              type="text" 
+              id="firstName"
+              formControlName="firstName"
+              class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input 
+              type="text" 
+              id="lastName"
+              formControlName="lastName"
+              class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="cellphoneNumber">Cellphone Number</label>
+            <input 
+              type="text" 
+              id="cellphoneNumber"
+              formControlName="cellphoneNumber"
+              class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <button 
+            type="button" 
+            class="btn btn-success"
+            [disabled]="!customerDetailsForm.valid"
+            (click)="proceedToAddressDetails()">Next</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
