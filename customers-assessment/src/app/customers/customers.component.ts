@@ -12,6 +12,7 @@ export class CustomersComponent implements OnInit {
 
   registeredCustomers = 3;
   customers = [];
+  error = null;
   
   constructor(
     private customerService: CustomerService,
@@ -25,6 +26,8 @@ export class CustomersComponent implements OnInit {
       (response: Customer[]) => {
         this.customers = response;
         this.customerService.customers = this.customers;
+      }, error => {
+        this.error = error.message;
       }
     );
   }

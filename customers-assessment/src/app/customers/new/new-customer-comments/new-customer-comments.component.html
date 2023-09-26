@@ -21,6 +21,10 @@
                   [disabled]="!customerCommentsForm.valid">Submit</button>
               </div>
             </div>
+            <div class="alert alert-danger" *ngIf="error">
+                <h3>An Error Occured!</h3>
+                <p>{{ error }}</p>
+            </div>
         </form>
     </div>
 </div>

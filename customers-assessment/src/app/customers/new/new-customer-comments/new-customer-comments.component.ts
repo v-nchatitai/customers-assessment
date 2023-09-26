@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class NewCustomerCommentsComponent implements OnInit {
 
   customerCommentsForm: FormGroup;
+  error = null;
 
   constructor(
     private customerService: CustomerService,
@@ -41,6 +42,8 @@ export class NewCustomerCommentsComponent implements OnInit {
         this.customerService.selectedCustomer = null;
         this.customerService.editMode = false;
         this.router.navigate(['/']);
+      }, error => {
+        this.error = error.message;
       }
     );
   }
