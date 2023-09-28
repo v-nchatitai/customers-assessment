@@ -1,41 +1,42 @@
 <div class="row">
-    <div class="row">
-        <div class="col-xs-8">
-            All Customers({{ registeredCustomers }})
-        </div>
-        <div class="col-xs-4">
-            <!-- <button
-                type="button"
-                class="btn btn-primary">
-                Add Customer</button>     -->
-        </div>
+  <div class="row">
+    <div class="col-xs-8">
+      <!--TODO: Dont hard code-->
+      All Customers({{ registeredCustomers }})
     </div>
-    <hr>
-    <div class="row">
-        <div class="col-xs-12">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <!-- Skeptical about sort here! -->
-                        <th class="col" sortable="firstName">Name</th>
-                        <th scope="col" sortable="lastName">Surname</th>
-                        <th scope="col">Cell Number</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let customer of customers">
-                        <td>{{ customer.firstName }}</td>
-                        <td>{{ customer.lastName }}</td>
-                        <td>{{ customer.cellphoneNumber }}</td>
-                        <a (click)="showCustomerDetails(customer)">Read more...</a>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <div class="col-xs-4">
+      <!-- <button
+          type="button"
+          class="btn btn-primary">
+          Add Customer</button>     -->
     </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <!-- Skeptical about sort here! -->
+          <th class="col" sortable="firstName">Name</th>
+          <th scope="col" sortable="lastName">Surname</th>
+          <th scope="col">Cell Number</th>
+          <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let customer of customers">
+          <td>{{ customer.firstName }}</td>
+          <td>{{ customer.lastName }}</td>
+          <td>{{ customer.cellphoneNumber }}</td>
+          <a (click)="showCustomerDetails(customer.id)">Read more...</a>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 <div class="alert alert-danger" *ngIf="error">
-    <h3>An Error Occured!</h3>
-    <p>{{ error }}</p>
+  <h3>An Error Occured!</h3>
+  <p>{{ error }}</p>
 </div>

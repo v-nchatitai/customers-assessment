@@ -18,7 +18,7 @@ export class NewCustomerDetailsComponent implements OnInit {
     private customerService: CustomerService,
     private router: Router
   ) {}
-  
+
   ngOnInit(): void {
     this.initForm();
   }
@@ -35,7 +35,7 @@ export class NewCustomerDetailsComponent implements OnInit {
     } else {
       this.customer = new Customer();
     }
-
+    // TODO: Look at using form builder
     this.customerDetailsForm = new FormGroup({
       'firstName': new FormControl(firstName, Validators.required),
       'lastName': new FormControl(lastName, Validators.required),
