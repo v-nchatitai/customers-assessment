@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Customer } from '../customer.model';
 import { CustomerService } from '../customer.service';
 import { Router } from '@angular/router';
-import { Observable, Subject, of } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
 @Component({
