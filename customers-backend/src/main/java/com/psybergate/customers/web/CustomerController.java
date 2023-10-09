@@ -37,6 +37,7 @@ public class CustomerController {
         List<Customer> customers = customerService.fetchAllCustomers();
         if (customers.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//            throw new RuntimeException("Some rand exception here for test purposes...");
         }
         return new ResponseEntity<>(customers, HttpStatus.OK);
     }

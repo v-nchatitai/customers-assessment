@@ -1,23 +1,17 @@
-<div class="row">
-  <div class="row">
+<div class="row" *ngIf="customers$ | async as customers">
+  <div class="row" *ngIf="customers.length > 0  else noCustomers">
     <div class="col-xs-8">
-      <!--TODO: Dont hard code-->
-      All Customers({{ registeredCustomers }})
+      All Customers({{ customers.length }})
     </div>
     <div class="col-xs-4">
-      <!-- <button
-          type="button"
-          class="btn btn-primary">
-          Add Customer</button>     -->
     </div>
   </div>
   <hr>
-  <div class="row">
+  <div class="row" *ngIf="customers.length > 0">
     <div class="col-xs-12">
       <table class="table table-striped">
         <thead>
         <tr>
-          <!-- Skeptical about sort here! -->
           <th class="col" sortable="firstName">Name</th>
           <th scope="col" sortable="lastName">Surname</th>
           <th scope="col">Cell Number</th>
@@ -35,8 +29,10 @@
       </table>
     </div>
   </div>
-</div>
-<div class="alert alert-danger" *ngIf="error">
-  <h3>An Error Occured!</h3>
-  <p>{{ error }}</p>
+  <ng-template #noCustomers>
+    <div class="alert alert-info">
+      <h4>No customers to show at the moment!</h4>
+    </div>
+  </ng-template>
+  <app-custom-error *ngIf="error" [error]="error"></app-custom-error>  
 </div>
